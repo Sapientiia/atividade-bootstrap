@@ -1,0 +1,12 @@
+{
+  "name": "Atividade Bootstrap",
+  "image": "mcr.microsoft.com/devcontainers/javascript-node:22",
+  "customizations": {
+    "vscode": { "extensions": ["MS-CEINTL.vscode-language-pack-pt-BR"] }
+  },
+  "forwardPorts": [3000],
+  "portsAttributes": {
+    "3000": { "label": "Página da atividade", "onAutoForward": "openBrowser" }
+  },
+  "postAttachCommand": "npx --yes serve -l 3000 ."
+}

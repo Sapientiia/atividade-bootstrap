@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-bs-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HAYABUSA | Suzuki Motorcycles</title>
+  <meta name="description" content="Página da nova Suzuki Hayabusa 1340: modelos, galeria de fotos, especificações do motor e agendamento de test ride.">
+  <link rel="icon" href="assets/img/favicon.webp" type="image/webp">
+
+  <!-- Bootstrap 5.3.8 pelo CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+  <!-- Fontes da página original: Alatsi (títulos) e Roboto Condensed (texto) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alatsi&family=Roboto+Condensed:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Ajustes de tema: fica por último para sobrescrever o Bootstrap -->
+  <link href="css/estilo.css" rel="stylesheet">
+</head>
+<body>
+  <a class="visually-hidden-focusable hb-pular" href="#conteudo">Pular para o conteúdo</a>
+
+  <!-- Navbar -->
+  <header>
+    <nav class="navbar navbar-expand-lg fixed-top hb-navbar" aria-label="Navegação principal">
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center gap-2" href="#inicio">
+          <span class="hb-placa-logo">
+            <img src="assets/img/logo-suzuki.png" alt="Suzuki" width="178" height="35">
+          </span>
+          <span class="hb-marca">Hayabusa</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal" aria-controls="menuPrincipal" aria-expanded="false" aria-label="Abrir menu de navegação">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="menuPrincipal">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="#inicio" aria-current="page">Início</a></li>
+            <li class="nav-item"><a class="nav-link" href="#modelos">Modelos</a></li>
+            <li class="nav-item"><a class="nav-link" href="#galeria">Galeria</a></li>
+            <li class="nav-item"><a class="nav-link" href="#especificacoes">Especificações</a></li>
+            <li class="nav-item"><a class="nav-link" href="#contato">Contato</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main id="conteudo" tabindex="-1">
+
+    <!-- Abertura (hero) -->
+    <section id="inicio" class="hb-secao hb-hero" aria-labelledby="titulo-inicio">
+      <div class="container">
+        <div class="row align-items-center g-4 g-lg-5">
+          <div class="col-lg-6 col-xl-7">
+            <div class="hb-painel">
+              <h1 id="titulo-inicio" class="hb-titulo-hero">
+                Hayabusa
+                <span class="d-block">Suzuki Motorcycles</span>
+              </h1>
+              <p class="hb-subtitulo">Em breve</p>
+              <p class="lead">A nova Hayabusa chega com o motor de 1340 cc revisado, carenagem redesenhada e acelerador eletrônico. Conheça as três versões, veja as fotos e agende um test ride.</p>
+              <div class="d-flex flex-wrap gap-3 mt-4">
+                <a class="btn btn-primary btn-lg" href="#modelos">Ver modelos</a>
+                <a class="btn btn-outline-light btn-lg" href="#contato">Agendar test ride</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6 col-xl-5 text-center">
+            <img src="assets/img/hero-gsxr-preta.png" class="img-fluid hb-foto-hero" alt="Moto esportiva Suzuki preta vista de lado, com luzes de LED vermelhas acesas na carenagem" width="985" height="820" fetchpriority="high">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Cards dos modelos -->
+    <section id="modelos" class="hb-secao" aria-labelledby="titulo-modelos">
+      <div class="container">
+        <p class="faixa">Velocidade e elegância</p>
+        <h2 id="titulo-modelos" class="hb-titulo-secao">Modelos</h2>
+
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 justify-content-center">
+          <div class="col">
+            <article class="card h-100 hb-card">
+              <div class="hb-card-foto">
+                <img src="assets/img/hayabusa-prata.png" class="card-img-top object-fit-contain" alt="Hayabusa prata com detalhes vermelhos, vista lateral em ângulo" width="550" height="350" loading="lazy">
+              </div>
+              <div class="card-body d-flex flex-column">
+                <h3 class="card-title">Hayabusa 1340 Prata Metálica</h3>
+                <p class="card-text">Pintura prata com detalhes em vermelho. É a combinação mais tradicional da linha, para quem prefere um visual clássico.</p>
+                <button class="btn btn-outline-light mt-auto align-self-start" type="button" data-bs-toggle="modal" data-bs-target="#modalModelo" data-modelo="Hayabusa 1340 Prata Metálica" data-descricao="Pintura prata com detalhes em vermelho. É a combinação mais tradicional da linha, para quem prefere um visual clássico.">Ver detalhes<span class="visually-hidden"> da Hayabusa 1340 Prata Metálica</span></button>
+              </div>
+            </article>
+          </div>
+          <div class="col">
+            <article class="card h-100 hb-card">
+              <div class="hb-card-foto">
+                <img src="assets/img/hayabusa-branca.png" class="card-img-top object-fit-contain" alt="Hayabusa branca perolizada em vista lateral" width="540" height="350" loading="lazy">
+              </div>
+              <div class="card-body d-flex flex-column">
+                <h3 class="card-title">Hayabusa 1340 Branca Pérola</h3>
+                <p class="card-text">Acabamento branco perolizado que deixa as linhas da carenagem mais evidentes. Mesmo conjunto mecânico, visual mais limpo.</p>
+                <button class="btn btn-outline-light mt-auto align-self-start" type="button" data-bs-toggle="modal" data-bs-target="#modalModelo" data-modelo="Hayabusa 1340 Branca Pérola" data-descricao="Acabamento branco perolizado que deixa as linhas da carenagem mais evidentes. Mesmo conjunto mecânico, visual mais limpo.">Ver detalhes<span class="visually-hidden"> da Hayabusa 1340 Branca Pérola</span></button>
+              </div>
+            </article>
+          </div>
+          <div class="col">
+            <article class="card h-100 hb-card">
+              <div class="hb-card-foto">
+                <img src="assets/img/hayabusa-preta-dourada.png" class="card-img-top object-fit-contain" alt="Hayabusa preta com detalhes dourados, vista lateral em ângulo" width="525" height="350" loading="lazy">
+              </div>
+              <div class="card-body d-flex flex-column">
+                <h3 class="card-title">Hayabusa 1340 Preta e Dourada</h3>
+                <p class="card-text">Carenagem preta com detalhes dourados. É a versão de aparência mais sóbria entre as três.</p>
+                <button class="btn btn-outline-light mt-auto align-self-start" type="button" data-bs-toggle="modal" data-bs-target="#modalModelo" data-modelo="Hayabusa 1340 Preta e Dourada" data-descricao="Carenagem preta com detalhes dourados. É a versão de aparência mais sóbria entre as três.">Ver detalhes<span class="visually-hidden"> da Hayabusa 1340 Preta e Dourada</span></button>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Carrossel da galeria -->
+    <section id="galeria" class="hb-secao" aria-labelledby="titulo-galeria">
+      <div class="container">
+        <h2 id="titulo-galeria" class="hb-titulo-secao">Galeria</h2>
+        <div class="row">
+          <div class="col-lg-10 mx-auto">
+            <!-- sem data-bs-ride: o autoplay é ligado no script.js (respeita movimento reduzido) -->
+            <section id="carrosselGaleria" class="carousel slide hb-carrossel" aria-roledescription="carrossel" aria-label="Fotos dos modelos">
+              <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carrosselGaleria" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Foto 1: Hayabusa 1340 Prata Metálica"></button>
+                <button type="button" data-bs-target="#carrosselGaleria" data-bs-slide-to="1" aria-label="Foto 2: Hayabusa 1340 Branca Pérola"></button>
+                <button type="button" data-bs-target="#carrosselGaleria" data-bs-slide-to="2" aria-label="Foto 3: Hayabusa 1340 Preta e Dourada"></button>
+              </div>
+              <div class="carousel-inner">
+                <div class="carousel-item active" role="group" aria-roledescription="slide" aria-label="1 de 3">
+                  <img src="assets/img/hayabusa-prata.png" class="d-block w-100 object-fit-contain" alt="Hayabusa prata com detalhes vermelhos" width="550" height="350" loading="lazy">
+                  <div class="carousel-caption position-static pb-5">
+                    <p class="mb-0">Hayabusa 1340 Prata Metálica — detalhes em vermelho</p>
+                  </div>
+                </div>
+                <div class="carousel-item" role="group" aria-roledescription="slide" aria-label="2 de 3">
+                  <img src="assets/img/hayabusa-branca.png" class="d-block w-100 object-fit-contain" alt="Hayabusa branca perolizada" width="540" height="350" loading="lazy">
+                  <div class="carousel-caption position-static pb-5">
+                    <p class="mb-0">Hayabusa 1340 Branca Pérola — acabamento perolizado</p>
+                  </div>
+                </div>
+                <div class="carousel-item" role="group" aria-roledescription="slide" aria-label="3 de 3">
+                  <img src="assets/img/hayabusa-preta-dourada.png" class="d-block w-100 object-fit-contain" alt="Hayabusa preta com detalhes dourados" width="525" height="350" loading="lazy">
+                  <div class="carousel-caption position-static pb-5">
+                    <p class="mb-0">Hayabusa 1340 Preta e Dourada — detalhes dourados</p>
+                  </div>
+                </div>
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#carrosselGaleria" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Foto anterior</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#carrosselGaleria" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Próxima foto</span>
+              </button>
+            </section>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tabela de especificações -->
+    <section id="especificacoes" class="hb-secao" aria-labelledby="titulo-especificacoes">
+      <div class="container">
+        <h2 id="titulo-especificacoes" class="hb-titulo-secao">Características e especificações</h2>
+        <div class="row g-4 g-lg-5">
+          <div class="col-lg-5">
+            <p>A Hayabusa continua fácil de reconhecer. A carenagem foi redesenhada para cortar melhor o vento, mas manteve as referências ao falcão-peregrino, o animal mais rápido do mundo. As novas linhas deixam o conjunto mais refinado sem perder a cara de moto feita para andar rápido.</p>
+            <p>O motor de 1340 cc, quatro cilindros e duplo comando foi totalmente revisado. Agora usa corpos de borboleta eletrônicos Ride-by-Wire, com dois injetores por cilindro e ar pressurizado vindo das tomadas SRAD no bico da carenagem. O novo escapamento duplo e simétrico é mais leve, tem fluxo melhor e um som mais encorpado.</p>
+          </div>
+          <div class="col-lg-7">
+            <div class="table-responsive hb-tabela-moldura">
+              <table class="table table-striped table-dark align-middle mb-0 hb-tabela">
+                <caption class="caption-top">Especificações técnicas do motor Hayabusa 1340 cc</caption>
+                <thead>
+                  <tr>
+                    <th scope="col">Item</th>
+                    <th scope="col">Especificação</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">Motor</th>
+                    <td class="text-nowrap">1340 cc, 4 tempos, refrigeração líquida, 4 cilindros, DOHC</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Diâmetro x curso</th>
+                    <td class="text-nowrap">81,0 mm x 65,0 mm</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Taxa de compressão</th>
+                    <td class="text-nowrap">12,5:1</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Alimentação</th>
+                    <td class="text-nowrap">Injeção eletrônica com corpos de borboleta Ride-by-Wire</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Partida</th>
+                    <td class="text-nowrap">Elétrica</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Lubrificação</th>
+                    <td class="text-nowrap">Cárter úmido</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Formulário de contato -->
+    <section id="contato" class="hb-secao" aria-labelledby="titulo-contato">
+      <div class="container">
+        <div class="row g-4 g-lg-5">
+          <div class="col-lg-4">
+            <h2 id="titulo-contato" class="hb-titulo-secao">Agende um test ride</h2>
+            <p>Preencha os dados e entraremos em contato para combinar data e horário.</p>
+            <p class="text-body-secondary small">Campos marcados com * são obrigatórios.</p>
+          </div>
+          <div class="col-lg-8">
+            <!-- novalidate: a validação HTML5 é consultada pelo script.js com checkValidity() -->
+            <form id="formTestRide" class="row g-3" novalidate>
+              <div class="col-12 col-md-6">
+                <label for="campoNome" class="form-label">Nome completo <span aria-hidden="true">*</span></label>
+                <input type="text" class="form-control" id="campoNome" name="nome" autocomplete="name" required minlength="3" pattern=".*\S.*" aria-describedby="erroNome">
+                <div class="invalid-feedback" id="erroNome">Informe seu nome com pelo menos 3 letras.</div>
+              </div>
+              <div class="col-12 col-md-6">
+                <label for="campoEmail" class="form-label">E-mail <span aria-hidden="true">*</span></label>
+                <input type="email" class="form-control" id="campoEmail" name="email" autocomplete="email" required aria-describedby="erroEmail">
+                <div class="invalid-feedback" id="erroEmail">Informe um e-mail válido.</div>
+              </div>
+              <div class="col-12 col-md-6">
+                <label for="campoTelefone" class="form-label">Telefone</label>
+                <input type="tel" class="form-control" id="campoTelefone" name="telefone" autocomplete="tel" inputmode="tel" aria-describedby="ajudaTelefone">
+                <div class="form-text" id="ajudaTelefone">Opcional. Com DDD, por exemplo (71) 99999-0000.</div>
+              </div>
+              <div class="col-12 col-md-6">
+                <label for="campoModelo" class="form-label">Modelo de interesse <span aria-hidden="true">*</span></label>
+                <select class="form-select" id="campoModelo" name="modelo" required aria-describedby="erroModelo">
+                  <option value="" disabled selected>Selecione</option>
+                  <option value="Hayabusa 1340 Prata Metálica">Hayabusa 1340 Prata Metálica</option>
+                  <option value="Hayabusa 1340 Branca Pérola">Hayabusa 1340 Branca Pérola</option>
+                  <option value="Hayabusa 1340 Preta e Dourada">Hayabusa 1340 Preta e Dourada</option>
+                </select>
+                <div class="invalid-feedback" id="erroModelo">Escolha um modelo.</div>
+              </div>
+              <div class="col-12">
+                <label for="campoMensagem" class="form-label">Mensagem <span aria-hidden="true">*</span></label>
+                <textarea class="form-control" id="campoMensagem" name="mensagem" rows="4" required minlength="10" placeholder="Conte se já pilota motos de alta cilindrada ou deixe sua dúvida" aria-describedby="erroMensagem"></textarea>
+                <div class="invalid-feedback" id="erroMensagem">Escreva pelo menos 10 caracteres.</div>
+              </div>
+              <div class="col-12">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="campoAceite" name="aceite" required aria-describedby="erroAceite">
+                  <label class="form-check-label" for="campoAceite">Aceito ser contatado por e-mail ou telefone <span aria-hidden="true">*</span></label>
+                  <div class="invalid-feedback" id="erroAceite">É preciso aceitar o contato para continuar.</div>
+                </div>
+              </div>
+              <div class="col-12">
+                <button type="submit" class="btn btn-primary btn-lg" id="botaoEnviar">Enviar solicitação</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="hb-rodape">
+    <div class="container">
+      <div class="row g-4 align-items-center text-center text-md-start">
+        <div class="col-md-5 col-lg-7">
+          <div class="d-flex flex-column flex-md-row align-items-center gap-3">
+            <img src="assets/img/simbolo-suzuki.png" class="hb-simbolo" alt="" width="56" height="55" loading="lazy">
+            <p class="mb-0 small">© <span id="anoAtual">2026</span> Victor Oliveira. Página fictícia desenvolvida para fins acadêmicos (UCSAL). Suzuki e Hayabusa são marcas de seus respectivos titulares.</p>
+          </div>
+        </div>
+        <div class="col-md-7 col-lg-5">
+          <nav aria-label="Navegação do rodapé">
+            <ul class="nav flex-column flex-md-row justify-content-md-end">
+              <li class="nav-item"><a class="nav-link" href="#inicio">Início</a></li>
+              <li class="nav-item"><a class="nav-link" href="#modelos">Modelos</a></li>
+              <li class="nav-item"><a class="nav-link" href="#galeria">Galeria</a></li>
+              <li class="nav-item"><a class="nav-link" href="#especificacoes">Especificações</a></li>
+              <li class="nav-item"><a class="nav-link" href="#contato">Contato</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Modal de detalhes (o mesmo para os três cards; conteúdo preenchido pelo script.js) -->
+  <div class="modal fade hb-modal" id="modalModelo" tabindex="-1" role="dialog" aria-labelledby="modalModeloTitulo">
+    <div class="modal-dialog modal-dialog-centered modal-lg modal-fullscreen-sm-down">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title fs-4" id="modalModeloTitulo">Detalhes do modelo</h2>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+        </div>
+        <div class="modal-body">
+          <p id="modalModeloDescricao" class="mb-0">Motor de 1340 cc, quatro cilindros, DOHC, com injeção eletrônica Ride-by-Wire.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-light" data-bs-dismiss="modal">Fechar</button>
+          <button type="button" class="btn btn-primary" id="botaoAgendarModelo">Agendar test ride</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal de confirmação do formulário -->
+  <div class="modal fade hb-modal" id="modalConfirmacao" tabindex="-1" role="dialog" aria-labelledby="modalConfirmacaoTitulo">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title fs-4" id="modalConfirmacaoTitulo">Solicitação recebida</h2>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+        </div>
+        <div class="modal-body">
+          <p class="mb-0">Obrigado, <span id="confirmacaoNome"></span>. Seu pedido de test ride da <span id="confirmacaoModelo"></span> foi registrado. Esta página é um exercício acadêmico: nenhum dado é enviado ou armazenado.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Fechar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>

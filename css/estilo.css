@@ -1,0 +1,453 @@
+/*
+  Ajustes de tema sobre o Bootstrap 5.3.
+  A estrutura e o layout vêm das classes do Bootstrap; aqui ficam só as cores,
+  as fontes e alguns detalhes da identidade da página original.
+*/
+
+/* ---------- Cores e fontes da página original ---------- */
+:root {
+  --hb-preto: #000;
+  --hb-branco: #fff;
+  --hb-vermelho: #8d0915;        /* só como fundo/borda: sobre preto não tem contraste para texto */
+  --hb-vermelho-hover: #a50d1b;
+  --hb-vermelho-ativo: #6e0710;
+  --hb-vermelho-claro: #ff5a5f;  /* versão do vermelho usada em texto sobre fundo escuro */
+  --hb-cinza: #949494;
+  --hb-cinza-escuro: #282d30;
+  --hb-painel: rgba(40, 45, 48, .5);
+  --hb-linha: #717171;
+  --hb-claro: #f2f2f2;           /* fundo das fotos, que têm fundo transparente */
+  --hb-fonte-titulo: "Alatsi", "Arial Narrow", sans-serif;
+  --hb-fonte-texto: "Roboto Condensed", "Arial Narrow", system-ui, sans-serif;
+  --hb-raio: 6px;
+  --hb-raio-painel: 0 60px 60px 60px;
+  --hb-altura-navbar: 4.5rem;
+}
+
+/* Variáveis do tema escuro do Bootstrap trocadas pelas da página */
+:root[data-bs-theme="dark"] {
+  --bs-body-bg: var(--hb-preto);
+  --bs-body-bg-rgb: 0, 0, 0;
+  --bs-body-color: var(--hb-branco);
+  --bs-body-color-rgb: 255, 255, 255;
+  --bs-emphasis-color: var(--hb-branco);
+  --bs-secondary-color: rgba(255, 255, 255, .75);
+  --bs-primary: var(--hb-vermelho);
+  --bs-primary-rgb: 141, 9, 21;
+  --bs-primary-text-emphasis: var(--hb-vermelho-claro);
+  --bs-link-color: var(--hb-vermelho-claro);
+  --bs-link-color-rgb: 255, 90, 95;
+  --bs-link-hover-color: var(--hb-branco);
+  --bs-link-hover-color-rgb: 255, 255, 255;
+  --bs-font-sans-serif: var(--hb-fonte-texto);
+  --bs-body-line-height: 1.6;
+  --bs-border-color: var(--hb-linha);
+  --bs-border-radius: var(--hb-raio);
+  --bs-border-radius-sm: 4px;
+  --bs-border-radius-lg: var(--hb-raio);
+  --bs-border-radius-xl: var(--hb-raio);
+  --bs-form-invalid-color: var(--hb-vermelho-claro);
+  --bs-form-invalid-border-color: var(--hb-vermelho-claro);
+}
+
+/* ---------- Base ---------- */
+
+/* a navbar é fixa: o conteúdo começa abaixo dela */
+body {
+  padding-top: var(--hb-altura-navbar);
+}
+
+/* as âncoras param abaixo da navbar, sem esconder o título */
+main > section[id] {
+  scroll-margin-top: var(--hb-altura-navbar);
+}
+
+h1, h2, h3, .faixa, .hb-marca {
+  font-family: var(--hb-fonte-titulo);
+  font-weight: 400; /* Alatsi só tem o peso 400 */
+}
+
+.hb-secao {
+  padding-block: 3rem;
+  border-top: 1px solid rgba(255, 255, 255, .08);
+}
+
+.hb-secao.hb-hero {
+  border-top: 0;
+}
+
+.hb-titulo-secao {
+  font-size: clamp(2rem, 1.25rem + 3.5vw, 4rem);
+  line-height: 1.05;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+}
+
+/* foco sempre visível, sem o anel azul do Bootstrap
+   (o Bootstrap zera o outline desses componentes, por isso eles são repetidos aqui) */
+:focus-visible,
+.btn:focus-visible,
+.nav-link:focus-visible,
+.navbar-toggler:focus-visible,
+.btn-close:focus-visible,
+.carousel-control-prev:focus-visible,
+.carousel-control-next:focus-visible {
+  outline: 2px solid var(--hb-branco);
+  outline-offset: 2px;
+  box-shadow: none;
+}
+
+.hb-pular {
+  position: fixed;
+  top: .5rem;
+  left: .5rem;
+  z-index: 1100;
+  padding: .5rem 1rem;
+  background: var(--hb-branco);
+  color: var(--hb-preto);
+  border-radius: var(--hb-raio);
+}
+
+/* ---------- Botões ---------- */
+.btn-primary {
+  --bs-btn-color: #fff;
+  --bs-btn-bg: var(--hb-vermelho);
+  --bs-btn-border-color: var(--hb-vermelho);
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: var(--hb-vermelho-hover);
+  --bs-btn-hover-border-color: var(--hb-vermelho-hover);
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: var(--hb-vermelho-ativo);
+  --bs-btn-active-border-color: var(--hb-vermelho-ativo);
+  --bs-btn-disabled-color: #fff;
+  --bs-btn-disabled-bg: var(--hb-vermelho);
+  --bs-btn-disabled-border-color: var(--hb-vermelho);
+  --bs-btn-focus-shadow-rgb: 255, 90, 95;
+}
+
+/* ---------- Navbar ---------- */
+.hb-navbar {
+  min-height: var(--hb-altura-navbar);
+  background-color: var(--hb-preto);
+  border-bottom: 1px solid var(--hb-linha);
+  --bs-navbar-color: rgba(255, 255, 255, .8);
+  --bs-navbar-hover-color: var(--hb-branco);
+  --bs-navbar-active-color: var(--hb-branco);
+}
+
+/* o logo tem texto azul: precisa de uma placa clara para aparecer no preto */
+.hb-placa-logo {
+  display: inline-flex;
+  padding: .25rem .5rem;
+  background: var(--hb-branco);
+  border-radius: var(--hb-raio);
+}
+
+.hb-placa-logo img {
+  width: 120px;
+  height: auto;
+}
+
+.hb-marca {
+  font-size: 1.25rem;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+}
+
+.hb-navbar .nav-link {
+  border-bottom: 2px solid transparent;
+}
+
+.hb-navbar .nav-link[aria-current="page"] {
+  color: var(--hb-branco);
+  border-bottom-color: var(--hb-vermelho-claro);
+}
+
+/* menu aberto no celular: separado da barra por uma linha */
+@media (max-width: 991.98px) {
+  .hb-navbar .navbar-collapse {
+    margin-top: .5rem;
+    border-top: 1px solid var(--hb-linha);
+  }
+
+  .hb-navbar .navbar-nav {
+    padding-block: .5rem;
+  }
+
+  .hb-navbar .nav-link {
+    align-self: flex-start;
+  }
+}
+
+@media (min-width: 992px) {
+  .hb-navbar .navbar-nav {
+    gap: 1.5rem;
+  }
+}
+
+/* ---------- Hero ---------- */
+.hb-painel {
+  padding: 1.5rem;
+  background: var(--hb-painel);
+  border-radius: 0 32px 32px 32px;
+}
+
+.hb-titulo-hero {
+  font-size: clamp(2.5rem, 1.25rem + 5.5vw, 6rem);
+  line-height: 1;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.hb-titulo-hero span {
+  margin-top: .5rem;
+  font-size: .4em;
+  letter-spacing: .06em;
+}
+
+.hb-subtitulo {
+  font-size: clamp(1.25rem, 1rem + 1vw, 1.875rem);
+  font-weight: 700;
+  color: var(--hb-vermelho-claro);
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 576px) {
+  .hb-painel {
+    padding: 2.5rem;
+    border-radius: var(--hb-raio-painel);
+  }
+}
+
+/* ---------- Foto da abertura ----------
+  A foto original já vem cortada no lado direito (a roda da frente sai do quadro).
+  Por isso ela encosta na borda direita da tela, como na página antiga, e o corte
+  fica parecendo proposital. --hb-sangria é a distância entre o fim do container e
+  a borda da tela em cada ponto de quebra (largura máxima do .container + padding). */
+.hb-hero {
+  --hb-sangria: .75rem;
+  overflow-x: clip;
+}
+
+.hb-foto-hero {
+  display: block;
+  width: calc(100% + var(--hb-sangria));
+  max-width: none;
+  margin-left: auto;
+  margin-right: calc(-1 * var(--hb-sangria));
+}
+
+@media (min-width: 576px)  { .hb-hero { --hb-sangria: calc((100vw - 540px) / 2 + .75rem); } }
+@media (min-width: 768px)  { .hb-hero { --hb-sangria: calc((100vw - 720px) / 2 + .75rem); } }
+@media (min-width: 992px)  { .hb-hero { --hb-sangria: calc((100vw - 960px) / 2 + .75rem); } }
+@media (min-width: 1200px) { .hb-hero { --hb-sangria: calc((100vw - 1140px) / 2 + .75rem); } }
+@media (min-width: 1400px) { .hb-hero { --hb-sangria: calc((100vw - 1320px) / 2 + .75rem); } }
+
+@media (min-width: 992px) {
+  .hb-secao {
+    padding-block: 6rem;
+  }
+
+  .hb-hero {
+    display: flex;
+    align-items: center;
+    min-height: calc(100vh - var(--hb-altura-navbar));
+  }
+
+  .hb-hero > .container {
+    width: 100%;
+  }
+}
+
+/* ---------- Faixa "Velocidade e elegância" ---------- */
+.faixa {
+  font-size: clamp(1.75rem, 1rem + 3.5vw, 5rem);
+  line-height: 1.1;
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 3rem;
+}
+
+/* linha fina abaixo da frase, como no layout original */
+.faixa::after {
+  content: "";
+  display: block;
+  width: min(34rem, 80%);
+  height: 1px;
+  margin: 1.25rem auto 0;
+  background: var(--hb-linha);
+}
+
+/* ---------- Cards ---------- */
+.hb-card {
+  --bs-card-bg: var(--hb-cinza-escuro);
+  --bs-card-border-color: var(--hb-linha);
+  overflow: hidden;
+}
+
+.hb-card-foto {
+  aspect-ratio: 3 / 2;
+  padding: 1rem;
+  background: var(--hb-claro);
+}
+
+.hb-card-foto img {
+  width: 100%;
+  height: 100%;
+}
+
+.hb-card .card-title {
+  font-size: 1.5rem;
+}
+
+.hb-card:focus-within {
+  border-color: var(--hb-vermelho-claro);
+}
+
+@media (hover: hover) {
+  .hb-card {
+    transition: transform .2s ease, border-color .2s ease;
+  }
+
+  .hb-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--hb-vermelho-claro);
+  }
+}
+
+/* ---------- Carrossel ---------- */
+.hb-carrossel {
+  overflow: hidden;
+  background: var(--hb-claro);
+  border-radius: var(--hb-raio);
+}
+
+.hb-carrossel .carousel-item {
+  height: 18rem;
+}
+
+/* slide em coluna: a foto ocupa o espaço que sobra acima da legenda */
+.hb-carrossel .carousel-item.active,
+.hb-carrossel .carousel-item-next,
+.hb-carrossel .carousel-item-prev {
+  display: flex;
+  flex-direction: column;
+}
+
+.hb-carrossel .carousel-item img {
+  flex: 1 1 auto;
+  min-height: 0;
+  padding: 1rem 3.5rem 0;
+}
+
+.hb-carrossel .carousel-caption {
+  padding-top: .75rem;
+  font-weight: 700;
+}
+
+/* sobre o fundo claro o contorno de foco precisa ser escuro */
+/* no tema escuro o Bootstrap inverte as cores das setas (filter: invert),
+   então o contorno branco aparece preto sobre o fundo claro */
+.hb-carrossel .carousel-control-prev:focus-visible,
+.hb-carrossel .carousel-control-next:focus-visible {
+  outline: 2px solid var(--hb-branco);
+  outline-offset: -4px;
+}
+
+.hb-carrossel .carousel-indicators button:focus-visible {
+  outline: 2px solid var(--hb-preto);
+  outline-offset: 2px;
+}
+
+@media (min-width: 768px) {
+  .hb-carrossel .carousel-item {
+    height: 26rem;
+  }
+
+  .hb-carrossel .carousel-item img {
+    padding-inline: 5rem;
+  }
+}
+
+@media (min-width: 992px) {
+  .hb-carrossel .carousel-item {
+    height: 30rem;
+  }
+}
+
+/* ---------- Tabela ---------- */
+.hb-tabela-moldura {
+  border: 1px solid var(--hb-linha);
+  border-radius: var(--hb-raio);
+}
+
+.hb-tabela caption {
+  padding-inline: 1rem;
+}
+
+/* cabeçalho em cinza com texto preto, como o painel de especificações original */
+.hb-tabela > thead > tr > th {
+  --bs-table-bg: var(--hb-cinza);
+  --bs-table-color: var(--hb-preto);
+  text-transform: uppercase;
+  letter-spacing: .04em;
+}
+
+.hb-tabela th,
+.hb-tabela td {
+  padding: .75rem 1rem;
+}
+
+/* ---------- Formulário ---------- */
+.form-control:focus,
+.form-select:focus,
+.form-check-input:focus {
+  border-color: var(--hb-branco);
+  outline: 2px solid var(--hb-branco);
+  outline-offset: 2px;
+  box-shadow: none;
+}
+
+.form-check-input:checked {
+  background-color: var(--hb-vermelho);
+  border-color: var(--hb-vermelho-claro);
+}
+
+/* ---------- Modal ---------- */
+.modal.hb-modal {
+  --bs-modal-bg: var(--hb-cinza-escuro);
+  --bs-modal-border-color: var(--hb-linha);
+  --bs-modal-header-border-color: var(--hb-linha);
+  --bs-modal-footer-border-color: var(--hb-linha);
+}
+
+/* ---------- Rodapé ---------- */
+.hb-rodape {
+  padding-block: 2.5rem;
+  border-top: 1px solid var(--hb-linha);
+  color: var(--bs-secondary-color);
+}
+
+/* o símbolo é preto com fundo transparente: invertido para aparecer no preto */
+.hb-simbolo {
+  flex-shrink: 0;
+  filter: invert(1);
+}
+
+.hb-rodape .nav-link {
+  padding-inline: .5rem;
+  color: var(--bs-secondary-color);
+}
+
+.hb-rodape .nav-link:hover {
+  color: var(--hb-branco);
+}
+
+/* ---------- Movimento reduzido ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .hb-card,
+  .hb-card:hover {
+    transition: none;
+    transform: none;
+  }
+}
