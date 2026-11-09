@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scheme-dark scroll-smooth motion-reduce:scroll-auto">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HAYABUSA | Suzuki Motorcycles (versão Tailwind)</title>
+  <meta name="description" content="Landing page fictícia da Suzuki Hayabusa 1340 feita com Tailwind CSS: modelos, galeria, especificações e agendamento de test ride.">
+  <link rel="icon" href="../assets/img/favicon.webp" type="image/webp">
+
+  <!-- Tailwind v4 via CDN (gera as classes no navegador) -->
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alatsi&family=Roboto+Condensed:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- tokens da identidade visual: viram classes como bg-hb-vermelho, font-titulo, rounded-hb -->
+  <style type="text/tailwindcss">
+    @theme {
+      --color-hb-vermelho: #8d0915;
+      --color-hb-vermelho-hover: #a50d1b;
+      --color-hb-vermelho-ativo: #6e0710;
+      --color-hb-vermelho-claro: #ff5a5f;
+      --color-hb-cinza: #949494;
+      --color-hb-cinza-escuro: #282d30;
+      --color-hb-linha: #717171;
+      --color-hb-claro: #f2f2f2;
+      --font-titulo: "Alatsi", "Arial Narrow", sans-serif;
+      --font-texto: "Roboto Condensed", "Arial Narrow", system-ui, sans-serif;
+      --radius-hb: 6px;
+      /* mesmos pontos de quebra do Bootstrap */
+      --breakpoint-sm: 36rem;
+      --breakpoint-lg: 62rem;
+      --breakpoint-xl: 75rem;
+      --breakpoint-2xl: 87.5rem;
+    }
+  </style>
+
+  <script src="script.js" defer></script>
+</head>
+<body class="bg-black pt-[4.5rem] font-texto leading-[1.6] text-white">
+
+  <a href="#conteudo" class="sr-only rounded-hb bg-white px-4 py-2 font-bold text-black focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[60] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-hb-vermelho-claro">Pular para o conteúdo</a>
+
+  <header>
+    <nav aria-label="Navegação principal" class="fixed inset-x-0 top-0 z-50 border-b border-hb-linha bg-black">
+      <div class="mx-auto flex max-w-[71.25rem] 2xl:max-w-[82.5rem] flex-wrap items-center justify-between px-4">
+        <a href="#inicio" class="flex h-[4.5rem] items-center gap-3 rounded-hb focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">
+          <span class="rounded-hb bg-white px-2 py-1">
+            <img src="../assets/img/logo-suzuki.png" alt="Suzuki" width="178" height="35" class="h-6 w-auto sm:h-[35px]">
+          </span>
+          <span class="font-titulo text-xl tracking-wide">HAYABUSA</span>
+        </a>
+
+        <button id="botaoMenu" type="button" aria-controls="menuPrincipal" aria-expanded="false" aria-label="Abrir menu de navegação"
+          class="rounded-hb border border-hb-linha p-2 hover:bg-white/10 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white lg:hidden">
+          <svg aria-hidden="true" viewBox="0 0 24 24" class="size-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <path d="M4 7h16M4 12h16M4 17h16" />
+          </svg>
+        </button>
+
+        <ul id="menuPrincipal" class="hidden w-full border-t border-hb-linha py-2 lg:flex lg:w-auto lg:gap-6 lg:border-0 lg:py-0">
+          <li><a href="#inicio" aria-current="page" class="block border-b-2 border-transparent py-2 text-white/80 hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white aria-[current=page]:border-hb-vermelho-claro aria-[current=page]:text-white">Início</a></li>
+          <li><a href="#modelos" class="block border-b-2 border-transparent py-2 text-white/80 hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white aria-[current=page]:border-hb-vermelho-claro aria-[current=page]:text-white">Modelos</a></li>
+          <li><a href="#galeria" class="block border-b-2 border-transparent py-2 text-white/80 hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white aria-[current=page]:border-hb-vermelho-claro aria-[current=page]:text-white">Galeria</a></li>
+          <li><a href="#especificacoes" class="block border-b-2 border-transparent py-2 text-white/80 hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white aria-[current=page]:border-hb-vermelho-claro aria-[current=page]:text-white">Especificações</a></li>
+          <li><a href="#contato" class="block border-b-2 border-transparent py-2 text-white/80 hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white aria-[current=page]:border-hb-vermelho-claro aria-[current=page]:text-white">Contato</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main id="conteudo" tabindex="-1" class="focus:outline-none">
+
+    <!-- Hero -->
+    <section id="inicio" aria-labelledby="titulo-inicio" class="scroll-mt-[4.5rem] overflow-x-clip">
+      <div class="mx-auto grid max-w-[71.25rem] 2xl:max-w-[82.5rem] items-center gap-8 px-4 py-12 lg:min-h-[calc(100vh-4.5rem)] lg:grid-cols-2 lg:py-16 xl:grid-cols-12">
+        <div class="rounded-[0_32px_32px_32px] bg-[rgba(40,45,48,.5)] p-6 sm:rounded-[0_60px_60px_60px] sm:p-10 xl:col-span-7">
+          <h1 id="titulo-inicio" class="font-titulo text-[clamp(2.5rem,1.25rem+5.5vw,6rem)] uppercase leading-none">
+            Hayabusa
+            <span class="mt-2 block text-[clamp(1.5rem,1rem+2vw,2.5rem)]">Suzuki Motorcycles</span>
+          </h1>
+          <p class="mt-4 text-[clamp(1.25rem,1rem+1vw,1.875rem)] font-bold text-hb-vermelho-claro">Em breve</p>
+          <p class="mt-4 text-lg sm:text-xl">A nova Hayabusa chega com o motor de 1340 cc revisado, carenagem redesenhada e acelerador eletrônico. Conheça as três versões, veja as fotos e agende um test ride.</p>
+          <div class="mt-6 flex flex-wrap gap-3">
+            <a href="#modelos" class="rounded-hb bg-hb-vermelho px-6 py-3 font-bold hover:bg-hb-vermelho-hover active:bg-hb-vermelho-ativo focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">Ver modelos</a>
+            <a href="#contato" class="rounded-hb border border-white px-6 py-3 font-bold hover:bg-white hover:text-black focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">Agendar test ride</a>
+          </div>
+        </div>
+        <img src="../assets/img/hero-gsxr-preta.png" alt="Moto esportiva Suzuki preta vista de lado, com luzes de LED vermelhas acesas na carenagem" width="985" height="820" fetchpriority="high"
+          class="ml-auto block h-auto w-[calc(100%+var(--sangria))] max-w-none -mr-(--sangria) [--sangria:max(1rem,calc((100vw_-_71.25rem)/2_+_1rem))] 2xl:[--sangria:calc((100vw_-_82.5rem)/2_+_1rem)] xl:col-span-5">
+      </div>
+    </section>
+
+    <!-- Cards dos modelos -->
+    <section id="modelos" aria-labelledby="titulo-modelos" class="scroll-mt-[4.5rem] border-t border-white/8">
+      <div class="mx-auto max-w-[71.25rem] 2xl:max-w-[82.5rem] px-4 py-12 lg:py-24">
+        <p class="text-center font-titulo text-[clamp(2rem,1rem+4vw,5rem)] uppercase leading-tight">Velocidade e elegância</p>
+        <div aria-hidden="true" class="mx-auto mb-10 mt-4 h-px w-[min(34rem,80%)] bg-hb-linha"></div>
+        <h2 id="titulo-modelos" class="mb-8 font-titulo text-[clamp(2rem,1.25rem+3.5vw,4rem)] uppercase leading-tight">Modelos</h2>
+
+        <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+          <article class="flex flex-col overflow-hidden rounded-hb border border-hb-linha bg-hb-cinza-escuro focus-within:border-hb-vermelho-claro hover:border-hb-vermelho-claro motion-safe:transition motion-safe:duration-200 motion-safe:hover:-translate-y-1">
+            <div class="aspect-[3/2] bg-hb-claro p-4">
+              <img src="../assets/img/hayabusa-prata.png" alt="Hayabusa prata com detalhes vermelhos, vista lateral em ângulo" width="550" height="350" loading="lazy" class="size-full object-contain">
+            </div>
+            <div class="flex flex-1 flex-col gap-3 p-5">
+              <h3 class="font-titulo text-2xl">Hayabusa 1340 Prata Metálica</h3>
+              <p>Pintura prata com detalhes em vermelho. É a combinação mais tradicional da linha, para quem prefere um visual clássico.</p>
+              <button type="button" data-modelo="Hayabusa 1340 Prata Metálica" data-descricao="Pintura prata com detalhes em vermelho. É a combinação mais tradicional da linha, para quem prefere um visual clássico."
+                class="mt-auto self-start rounded-hb border border-white px-5 py-2 font-bold hover:bg-white hover:text-black focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">
+                Ver detalhes<span class="sr-only"> da Hayabusa 1340 Prata Metálica</span>
+              </button>
+            </div>
+          </article>
+
+          <article class="flex flex-col overflow-hidden rounded-hb border border-hb-linha bg-hb-cinza-escuro focus-within:border-hb-vermelho-claro hover:border-hb-vermelho-claro motion-safe:transition motion-safe:duration-200 motion-safe:hover:-translate-y-1">
+            <div class="aspect-[3/2] bg-hb-claro p-4">
+              <img src="../assets/img/hayabusa-branca.png" alt="Hayabusa branca perolizada em vista lateral" width="540" height="350" loading="lazy" class="size-full object-contain">
+            </div>
+            <div class="flex flex-1 flex-col gap-3 p-5">
+              <h3 class="font-titulo text-2xl">Hayabusa 1340 Branca Pérola</h3>
+              <p>Acabamento branco perolizado que deixa as linhas da carenagem mais evidentes. Mesmo conjunto mecânico, visual mais limpo.</p>
+              <button type="button" data-modelo="Hayabusa 1340 Branca Pérola" data-descricao="Acabamento branco perolizado que deixa as linhas da carenagem mais evidentes. Mesmo conjunto mecânico, visual mais limpo."
+                class="mt-auto self-start rounded-hb border border-white px-5 py-2 font-bold hover:bg-white hover:text-black focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">
+                Ver detalhes<span class="sr-only"> da Hayabusa 1340 Branca Pérola</span>
+              </button>
+            </div>
+          </article>
+
+          <!-- no tablet o terceiro card ocupa a linha toda, centralizado com a largura de uma coluna -->
+          <article class="flex flex-col overflow-hidden rounded-hb border border-hb-linha bg-hb-cinza-escuro focus-within:border-hb-vermelho-claro hover:border-hb-vermelho-claro motion-safe:transition motion-safe:duration-200 motion-safe:hover:-translate-y-1 md:col-span-2 md:w-[calc(50%-0.75rem)] md:justify-self-center lg:col-span-1 lg:w-auto lg:justify-self-stretch">
+            <div class="aspect-[3/2] bg-hb-claro p-4">
+              <img src="../assets/img/hayabusa-preta-dourada.png" alt="Hayabusa preta com detalhes dourados, vista lateral em ângulo" width="525" height="350" loading="lazy" class="size-full object-contain">
+            </div>
+            <div class="flex flex-1 flex-col gap-3 p-5">
+              <h3 class="font-titulo text-2xl">Hayabusa 1340 Preta e Dourada</h3>
+              <p>Carenagem preta com detalhes dourados. É a versão de aparência mais sóbria entre as três.</p>
+              <button type="button" data-modelo="Hayabusa 1340 Preta e Dourada" data-descricao="Carenagem preta com detalhes dourados. É a versão de aparência mais sóbria entre as três."
+                class="mt-auto self-start rounded-hb border border-white px-5 py-2 font-bold hover:bg-white hover:text-black focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">
+                Ver detalhes<span class="sr-only"> da Hayabusa 1340 Preta e Dourada</span>
+              </button>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Carrossel -->
+    <section id="galeria" aria-labelledby="titulo-galeria" class="scroll-mt-[4.5rem] border-t border-white/8">
+      <div class="mx-auto max-w-[71.25rem] 2xl:max-w-[82.5rem] px-4 py-12 lg:py-24">
+        <h2 id="titulo-galeria" class="mb-8 font-titulo text-[clamp(2rem,1.25rem+3.5vw,4rem)] uppercase leading-tight">Galeria</h2>
+
+        <section id="carrossel" aria-roledescription="carrossel" aria-label="Fotos dos modelos" class="relative overflow-hidden rounded-hb bg-hb-claro lg:mx-auto lg:w-10/12">
+          <!-- o JS move o trilho com translateX -->
+          <div id="carrosselTrilho" class="flex transition-transform duration-500 ease-in-out motion-reduce:transition-none">
+            <div data-slide role="group" aria-roledescription="slide" aria-label="1 de 3" class="flex h-72 w-full shrink-0 flex-col md:h-[26rem] lg:h-[30rem]">
+              <img src="../assets/img/hayabusa-prata.png" alt="Hayabusa prata com detalhes vermelhos" width="550" height="350" loading="lazy" class="min-h-0 w-full flex-1 object-contain px-14 pt-4">
+              <p class="px-14 pb-10 pt-2 text-center font-bold text-black">Hayabusa 1340 Prata Metálica — detalhes em vermelho</p>
+            </div>
+            <div data-slide role="group" aria-roledescription="slide" aria-label="2 de 3" class="flex h-72 w-full shrink-0 flex-col md:h-[26rem] lg:h-[30rem]">
+              <img src="../assets/img/hayabusa-branca.png" alt="Hayabusa branca perolizada" width="540" height="350" loading="lazy" class="min-h-0 w-full flex-1 object-contain px-14 pt-4">
+              <p class="px-14 pb-10 pt-2 text-center font-bold text-black">Hayabusa 1340 Branca Pérola — acabamento perolizado</p>
+            </div>
+            <div data-slide role="group" aria-roledescription="slide" aria-label="3 de 3" class="flex h-72 w-full shrink-0 flex-col md:h-[26rem] lg:h-[30rem]">
+              <img src="../assets/img/hayabusa-preta-dourada.png" alt="Hayabusa preta com detalhes dourados" width="525" height="350" loading="lazy" class="min-h-0 w-full flex-1 object-contain px-14 pt-4">
+              <p class="px-14 pb-10 pt-2 text-center font-bold text-black">Hayabusa 1340 Preta e Dourada — detalhes dourados</p>
+            </div>
+          </div>
+
+          <button id="carrosselAnterior" type="button" class="absolute left-2 top-1/2 grid size-10 -translate-y-1/2 place-items-center rounded-full bg-black/75 text-white hover:bg-black focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black">
+            <svg aria-hidden="true" viewBox="0 0 24 24" class="size-5" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7" /></svg>
+            <span class="sr-only">Foto anterior</span>
+          </button>
+          <button id="carrosselProximo" type="button" class="absolute right-2 top-1/2 grid size-10 -translate-y-1/2 place-items-center rounded-full bg-black/75 text-white hover:bg-black focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black">
+            <svg aria-hidden="true" viewBox="0 0 24 24" class="size-5" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7" /></svg>
+            <span class="sr-only">Próxima foto</span>
+          </button>
+
+          <div class="absolute inset-x-0 bottom-2 flex justify-center gap-1">
+            <button type="button" data-indicador="0" aria-current="true" aria-label="Foto 1: Hayabusa 1340 Prata Metálica" class="group rounded-hb p-2 focus-visible:outline-2 focus-visible:outline-black">
+              <span class="block h-1.5 w-8 rounded-full bg-black/50 group-hover:bg-black/60 group-aria-[current=true]:bg-black"></span>
+            </button>
+            <button type="button" data-indicador="1" aria-label="Foto 2: Hayabusa 1340 Branca Pérola" class="group rounded-hb p-2 focus-visible:outline-2 focus-visible:outline-black">
+              <span class="block h-1.5 w-8 rounded-full bg-black/50 group-hover:bg-black/60 group-aria-[current=true]:bg-black"></span>
+            </button>
+            <button type="button" data-indicador="2" aria-label="Foto 3: Hayabusa 1340 Preta e Dourada" class="group rounded-hb p-2 focus-visible:outline-2 focus-visible:outline-black">
+              <span class="block h-1.5 w-8 rounded-full bg-black/50 group-hover:bg-black/60 group-aria-[current=true]:bg-black"></span>
+            </button>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <!-- Tabela de especificações -->
+    <section id="especificacoes" aria-labelledby="titulo-especificacoes" class="scroll-mt-[4.5rem] border-t border-white/8">
+      <div class="mx-auto grid max-w-[71.25rem] 2xl:max-w-[82.5rem] gap-8 px-4 py-12 lg:grid-cols-12 lg:py-24">
+        <div class="lg:col-span-5">
+          <h2 id="titulo-especificacoes" class="mb-6 font-titulo text-[clamp(2rem,1.25rem+3.5vw,4rem)] uppercase leading-tight lg:text-[2.75rem]">Características e especificações</h2>
+          <p class="mb-4">A Hayabusa continua fácil de reconhecer. A carenagem foi redesenhada para cortar melhor o vento, mas manteve as referências ao falcão-peregrino, o animal mais rápido do mundo. As novas linhas deixam o conjunto mais refinado sem perder a cara de moto feita para andar rápido.</p>
+          <p>O motor de 1340 cc, quatro cilindros e duplo comando foi totalmente revisado. Agora usa corpos de borboleta eletrônicos Ride-by-Wire, com dois injetores por cilindro e ar pressurizado vindo das tomadas SRAD no bico da carenagem. O novo escapamento duplo e simétrico é mais leve, tem fluxo melhor e um som mais encorpado.</p>
+        </div>
+
+        <!-- no celular a tabela rola dentro desta caixa, não a página -->
+        <div class="overflow-x-auto rounded-hb border border-hb-linha lg:col-span-7 lg:self-center">
+          <table class="w-full border-collapse text-left">
+            <caption class="caption-top px-4 py-3 text-left text-hb-cinza">Especificações técnicas do motor Hayabusa 1340 cc</caption>
+            <thead class="bg-hb-cinza uppercase tracking-[.04em] text-black">
+              <tr>
+                <th scope="col" class="whitespace-nowrap px-4 py-3">Item</th>
+                <th scope="col" class="whitespace-nowrap px-4 py-3">Especificação</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="odd:bg-neutral-800 even:bg-neutral-900">
+                <th scope="row" class="whitespace-nowrap px-4 py-3">Motor</th>
+                <td class="whitespace-nowrap px-4 py-3">1340 cc, 4 tempos, refrigeração líquida, 4 cilindros, DOHC</td>
+              </tr>
+              <tr class="odd:bg-neutral-800 even:bg-neutral-900">
+                <th scope="row" class="whitespace-nowrap px-4 py-3">Diâmetro x curso</th>
+                <td class="whitespace-nowrap px-4 py-3">81,0 mm x 65,0 mm</td>
+              </tr>
+              <tr class="odd:bg-neutral-800 even:bg-neutral-900">
+                <th scope="row" class="whitespace-nowrap px-4 py-3">Taxa de compressão</th>
+                <td class="whitespace-nowrap px-4 py-3">12,5:1</td>
+              </tr>
+              <tr class="odd:bg-neutral-800 even:bg-neutral-900">
+                <th scope="row" class="whitespace-nowrap px-4 py-3">Alimentação</th>
+                <td class="whitespace-nowrap px-4 py-3">Injeção eletrônica com corpos de borboleta Ride-by-Wire</td>
+              </tr>
+              <tr class="odd:bg-neutral-800 even:bg-neutral-900">
+                <th scope="row" class="whitespace-nowrap px-4 py-3">Partida</th>
+                <td class="whitespace-nowrap px-4 py-3">Elétrica</td>
+              </tr>
+              <tr class="odd:bg-neutral-800 even:bg-neutral-900">
+                <th scope="row" class="whitespace-nowrap px-4 py-3">Lubrificação</th>
+                <td class="whitespace-nowrap px-4 py-3">Cárter úmido</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- Formulário -->
+    <section id="contato" aria-labelledby="titulo-contato" class="scroll-mt-[4.5rem] border-t border-white/8">
+      <div class="mx-auto grid max-w-[71.25rem] 2xl:max-w-[82.5rem] gap-8 px-4 py-12 lg:grid-cols-12 lg:py-24">
+        <div class="lg:col-span-4">
+          <h2 id="titulo-contato" class="mb-6 font-titulo text-[clamp(2rem,1.25rem+3.5vw,4rem)] uppercase leading-tight">Agende um test ride</h2>
+          <p>Preencha os dados e entraremos em contato para combinar data e horário.</p>
+          <p class="mt-3 text-sm text-white/75">Campos marcados com * são obrigatórios.</p>
+        </div>
+
+        <!-- sem novalidate: quem valida é o próprio navegador (HTML5); o script só confere os espaços -->
+        <form id="formTestRide" class="grid gap-5 md:grid-cols-2 lg:col-span-8">
+          <div>
+            <label for="campoNome" class="mb-1 block font-bold">Nome completo <span aria-hidden="true">*</span></label>
+            <input id="campoNome" name="nome" type="text" autocomplete="name" required minlength="3" pattern=".*\S.*" aria-describedby="erroNome"
+              class="peer w-full rounded-hb border border-hb-linha bg-black px-3 py-2 focus:border-white focus:outline-2 focus:outline-offset-2 focus:outline-white user-invalid:border-hb-vermelho-claro">
+            <p id="erroNome" class="mt-1 hidden text-sm text-hb-vermelho-claro peer-user-invalid:block">Informe seu nome com pelo menos 3 letras.</p>
+          </div>
+
+          <div>
+            <label for="campoEmail" class="mb-1 block font-bold">E-mail <span aria-hidden="true">*</span></label>
+            <input id="campoEmail" name="email" type="email" autocomplete="email" required aria-describedby="erroEmail"
+              class="peer w-full rounded-hb border border-hb-linha bg-black px-3 py-2 focus:border-white focus:outline-2 focus:outline-offset-2 focus:outline-white user-invalid:border-hb-vermelho-claro">
+            <p id="erroEmail" class="mt-1 hidden text-sm text-hb-vermelho-claro peer-user-invalid:block">Informe um e-mail válido.</p>
+          </div>
+
+          <div>
+            <label for="campoTelefone" class="mb-1 block font-bold">Telefone</label>
+            <input id="campoTelefone" name="telefone" type="tel" autocomplete="tel" inputmode="tel" aria-describedby="ajudaTelefone"
+              class="w-full rounded-hb border border-hb-linha bg-black px-3 py-2 focus:border-white focus:outline-2 focus:outline-offset-2 focus:outline-white">
+            <p id="ajudaTelefone" class="mt-1 text-sm text-white/75">Opcional. Com DDD, por exemplo (71) 99999-0000.</p>
+          </div>
+
+          <div>
+            <label for="campoModelo" class="mb-1 block font-bold">Modelo de interesse <span aria-hidden="true">*</span></label>
+            <select id="campoModelo" name="modelo" required aria-describedby="erroModelo"
+              class="peer w-full rounded-hb border border-hb-linha bg-black px-3 py-2 focus:border-white focus:outline-2 focus:outline-offset-2 focus:outline-white user-invalid:border-hb-vermelho-claro">
+              <option value="" disabled selected>Selecione</option>
+              <option value="Hayabusa 1340 Prata Metálica">Hayabusa 1340 Prata Metálica</option>
+              <option value="Hayabusa 1340 Branca Pérola">Hayabusa 1340 Branca Pérola</option>
+              <option value="Hayabusa 1340 Preta e Dourada">Hayabusa 1340 Preta e Dourada</option>
+            </select>
+            <p id="erroModelo" class="mt-1 hidden text-sm text-hb-vermelho-claro peer-user-invalid:block">Escolha um modelo.</p>
+          </div>
+
+          <div class="md:col-span-2">
+            <label for="campoMensagem" class="mb-1 block font-bold">Mensagem <span aria-hidden="true">*</span></label>
+            <textarea id="campoMensagem" name="mensagem" rows="4" required minlength="10" aria-describedby="erroMensagem" placeholder="Conte se já pilota motos de alta cilindrada ou deixe sua dúvida"
+              class="peer w-full rounded-hb border border-hb-linha bg-black px-3 py-2 placeholder:text-white/60 focus:border-white focus:outline-2 focus:outline-offset-2 focus:outline-white user-invalid:border-hb-vermelho-claro"></textarea>
+            <p id="erroMensagem" class="mt-1 hidden text-sm text-hb-vermelho-claro peer-user-invalid:block">Escreva pelo menos 10 caracteres.</p>
+          </div>
+
+          <div class="flex flex-wrap items-start gap-x-3 md:col-span-2">
+            <input id="campoAceite" name="aceite" type="checkbox" required aria-describedby="erroAceite"
+              class="peer mt-1 size-5 shrink-0 accent-hb-vermelho focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">
+            <label for="campoAceite" class="flex-1">Aceito ser contatado por e-mail ou telefone <span aria-hidden="true">*</span></label>
+            <p id="erroAceite" class="mt-1 hidden w-full text-sm text-hb-vermelho-claro peer-user-invalid:block">É preciso aceitar o contato para continuar.</p>
+          </div>
+
+          <div class="md:col-span-2">
+            <button id="botaoEnviar" type="submit" class="w-full rounded-hb bg-hb-vermelho px-8 py-3 text-lg font-bold hover:bg-hb-vermelho-hover active:bg-hb-vermelho-ativo focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white sm:w-auto">Enviar solicitação</button>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-hb-linha">
+    <div class="mx-auto grid max-w-[71.25rem] 2xl:max-w-[82.5rem] items-center gap-6 px-4 py-10 text-center md:grid-cols-2 md:text-left lg:grid-cols-12">
+      <div class="flex flex-col items-center gap-4 sm:flex-row md:items-start lg:col-span-7">
+        <img src="../assets/img/simbolo-suzuki.png" alt="" width="102" height="100" class="size-14 shrink-0 invert">
+        <div class="text-sm text-white/75">
+          <p>© <span id="anoAtual">2026</span> Victor Oliveira. Página fictícia desenvolvida para fins acadêmicos (UCSAL). Suzuki e Hayabusa são marcas de seus respectivos titulares.</p>
+          <p class="mt-2"><a href="../" class="text-hb-vermelho-claro underline underline-offset-2 hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">Ver versão Bootstrap</a></p>
+        </div>
+      </div>
+      <nav aria-label="Navegação do rodapé" class="lg:col-span-5">
+        <ul class="flex flex-col gap-1 md:flex-row md:flex-wrap md:justify-end md:gap-x-5">
+          <li><a href="#inicio" class="text-white/80 hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">Início</a></li>
+          <li><a href="#modelos" class="text-white/80 hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">Modelos</a></li>
+          <li><a href="#galeria" class="text-white/80 hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">Galeria</a></li>
+          <li><a href="#especificacoes" class="text-white/80 hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">Especificações</a></li>
+          <li><a href="#contato" class="text-white/80 hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">Contato</a></li>
+        </ul>
+      </nav>
+    </div>
+  </footer>
+
+  <!-- Modal de detalhes (o mesmo para os três cards) -->
+  <dialog id="modalModelo" aria-labelledby="modalModeloTitulo"
+    class="m-auto w-[min(calc(100%-2rem),50rem)] rounded-hb border border-hb-linha bg-hb-cinza-escuro p-0 text-white backdrop:bg-black/70">
+    <div class="p-6">
+      <div class="flex items-start justify-between gap-4 border-b border-hb-linha pb-4">
+        <h2 id="modalModeloTitulo" class="font-titulo text-2xl">Detalhes do modelo</h2>
+        <button type="button" data-fechar aria-label="Fechar" class="rounded-hb p-1 text-white/80 hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">
+          <svg aria-hidden="true" viewBox="0 0 24 24" class="size-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18" /></svg>
+        </button>
+      </div>
+      <p id="modalModeloDescricao" class="py-5"></p>
+      <div class="flex flex-wrap justify-end gap-3 border-t border-hb-linha pt-4">
+        <button type="button" data-fechar class="rounded-hb border border-white px-5 py-2 font-bold hover:bg-white hover:text-black focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">Fechar</button>
+        <button id="botaoAgendarModelo" type="button" class="rounded-hb bg-hb-vermelho px-5 py-2 font-bold hover:bg-hb-vermelho-hover active:bg-hb-vermelho-ativo focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">Agendar test ride</button>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Modal de confirmação do envio -->
+  <dialog id="modalConfirmacao" aria-labelledby="modalConfirmacaoTitulo"
+    class="m-auto w-[min(calc(100%-2rem),32rem)] rounded-hb border border-hb-linha bg-hb-cinza-escuro p-0 text-white backdrop:bg-black/70">
+    <div class="p-6">
+      <div class="flex items-start justify-between gap-4 border-b border-hb-linha pb-4">
+        <h2 id="modalConfirmacaoTitulo" class="font-titulo text-2xl">Solicitação recebida</h2>
+        <button type="button" data-fechar aria-label="Fechar" class="rounded-hb p-1 text-white/80 hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">
+          <svg aria-hidden="true" viewBox="0 0 24 24" class="size-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18" /></svg>
+        </button>
+      </div>
+      <p class="py-5">Obrigado, <strong id="confirmacaoNome"></strong>. Seu pedido de test ride da <strong id="confirmacaoModelo"></strong> foi registrado. Esta página é um exercício acadêmico: nenhum dado é enviado ou armazenado.</p>
+      <div class="flex justify-end border-t border-hb-linha pt-4">
+        <button type="button" data-fechar class="rounded-hb bg-hb-vermelho px-5 py-2 font-bold hover:bg-hb-vermelho-hover active:bg-hb-vermelho-ativo focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">Fechar</button>
+      </div>
+    </div>
+  </dialog>
+
+</body>
+</html>
